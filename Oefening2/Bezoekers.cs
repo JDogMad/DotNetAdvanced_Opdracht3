@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +17,23 @@ namespace Oefening2 {
             bezoekers.Add(item);
         }
 
-        public void Verwijderen(T item) {
-            bezoekers.Remove(item);
+        public T Verwijderen() {
+            if (bezoekers.Count <= 0) {
+
+                MessageBox.Show("Dit is een reeds lege stapel.");
+                throw new Exception();
+
+            } else {
+
+                T teller = bezoekers[bezoekers.Count - 1];
+                bezoekers.RemoveAt(bezoekers.Count - 1);
+
+                MessageBox.Show("Item is verwijderd.");
+
+                return teller;
+            }
+
+            // bezoekers.Remove(item);
         }
 
         public void Leegmaken() {

@@ -64,9 +64,7 @@ namespace Oefening2 {
         }
 
         private void button9_Click(object sender, EventArgs e) {
-            School school = new School(nieuweSchool.Text);
-
-            scholen.Verwijderen(school);
+            scholen.Verwijderen();
             scholenLijst.Text = scholen.ToString();
         }
 
